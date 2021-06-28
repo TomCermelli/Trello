@@ -1,0 +1,10 @@
+.footerBackground{
+    height: 150px;
+    background-color: black;
+    color: white;
+}
+
+.linkColor{
+    color: white;
+    text-decoration: none;
+}
