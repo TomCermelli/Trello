@@ -28,4 +28,8 @@ export class HeadingListComponent implements OnInit {
     })
     return this.headings
   }
+
+  deleteHeading(heading: Heading){
+    
+  }
 }

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeadingDeleteComponent } from './heading-delete.component';
+import { HeadingEditComponent } from './heading-edit.component';
 
-describe('HeadingDeleteComponent', () => {
-  let component: HeadingDeleteComponent;
-  let fixture: ComponentFixture<HeadingDeleteComponent>;
+describe('HeadingEditComponent', () => {
+  let component: HeadingEditComponent;
+  let fixture: ComponentFixture<HeadingEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeadingDeleteComponent ]
+      declarations: [ HeadingEditComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeadingDeleteComponent);
+    fixture = TestBed.createComponent(HeadingEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

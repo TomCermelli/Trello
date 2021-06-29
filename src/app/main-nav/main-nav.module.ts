@@ -5,16 +5,16 @@ import { HeadingCreateComponent } from './heading-create/heading-create.componen
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeadingDeleteComponent } from './heading-delete/heading-delete.component';
 import { HeadingListComponent } from './heading-list/heading-list.component';
 import { RouterModule } from '@angular/router';
+import { HeadingEditComponent } from './heading-edit/heading-edit.component';
 
 @NgModule({
   declarations: [
     MainNavComponent,
     HeadingCreateComponent,
-    HeadingDeleteComponent,
     HeadingListComponent,
+    HeadingEditComponent,
   ],
   imports: [
     CommonModule,
@@ -28,8 +28,8 @@ import { RouterModule } from '@angular/router';
   exports: [
     MainNavComponent,
     HeadingCreateComponent,
-    HeadingDeleteComponent,
     HeadingListComponent,
+    HeadingEditComponent,
   ]
 })
 export class MainNavModule { }

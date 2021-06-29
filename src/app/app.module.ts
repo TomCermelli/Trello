@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardModule } from './card/card.module';
@@ -24,9 +23,6 @@ import { MainNavModule } from './main-nav/main-nav.module';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ToastrModule.forRoot({
-      positionClass :'toast-top-right'
-    }),
     BrowserAnimationsModule,
     
   ],
