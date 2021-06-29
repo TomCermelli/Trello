@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-end">
+    <!--Si on ajoute un pôle, il ne faut pas oublié de rajouté un css correspondant et ajouter une variable dans le main-nav.ts contenant le contenu que l'on a enregistré.
+        Si nous ne faisont pas cette manipulation le bouton aura par défault un background noir-->
+    <div class="m-5">
+        <button class="btn btn-success" (click)="openModal()">Créer un nouveau pôle</button>
+    </div>
+    <div class="m-5">
+        <a routerLink="heading"><button class="btn btn-danger">Supprimer un pôle</button></a>
+    </div>
+</div>
+<ul class="nav justify-content-evenly">
+    <!--On fait une boucle sur les rubrique des pôles afin de tous les avoir dynamiquement-->
+    <li class="nav-item" *ngFor="let heading of headings">
+        <!--On utilise le ngClass pour injecter la classe que l'on veut sur chaque rubrique-->
+        <a class="nav-link linkColor btn btn-group" [ngClass]="{strat: heading.title == strategie,  
+        marketing: heading.title == marketing,
+        photo: heading.title == photoVideo,
+        production: heading.title == production,
+        creation: heading.title == creationGraphique,
+        digital: heading.title == digital }">{{heading.title}}</a>
+    </li>
+
+</ul>

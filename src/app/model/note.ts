@@ -1,3 +1,4 @@
+import { Card } from "./card";
 import { User } from "./user";
 
 export interface Note {
@@ -5,4 +6,5 @@ export interface Note {
     text: string;
     date: Date;
     user: User;
+    card: Card;
 }
