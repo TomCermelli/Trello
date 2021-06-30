@@ -24,6 +24,11 @@ export class CardService {
     return this.http.get<Card>(this.baseUrl + id);
   }
 
+  // Récupère une rubrique grâce au nom du parent
+  getByHeadingName(name : string){
+    return this.http.get<Card>(this.baseUrl + name)
+  }
+
   // Créer une rubrique , pour se faire il faut envoyé à cette méthode un objet de type Card
   create(card: Card){
     return this.http.post(this.baseUrl, card);

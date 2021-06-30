@@ -4,7 +4,6 @@ import { User } from "./user";
 
 export interface Card {
     id: number;
-    heading: Heading;
     user: User[];
     notes: Note;
     title: string;

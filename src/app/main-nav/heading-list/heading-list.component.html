@@ -2,9 +2,7 @@
     <div class="border rounded p-3 mb-3 mt-3" *ngFor="let heading of headings">
         <section class="row">
             <section class="align-self-center col-md-9">
-                <a class="visualLink" routerLink="post/{{heading.id}}">
-                    <h3 class="headingTitle ">{{heading.title}}</h3>
-                </a>
+                <h3 class="headingTitle ">{{heading.title}}</h3>
             </section>
             <section class="col-md-3 text-right">
                 <a class="visualLink" routerLink="edit/{{heading.id}}"><button class="btn btn-success mr-4"><i

@@ -1,1 +1,31 @@
-<p>card works!</p>
+<h2 align=center class="m-5">{{heading}}</h2>
+
+<div class="d-flex justify-content-end">
+    <!--Si on ajoute un pôle, il ne faut pas oublié de rajouté un css correspondant et ajouter une variable dans le main-nav.ts contenant le contenu que l'on a enregistré.
+        Si nous ne faisont pas cette manipulation le bouton aura par défault un background noir-->
+    <div class="m-5">
+        <button class="btn btn-success" (click)="openModalCard()">Nouveau tableau</button>
+    </div>
+    <div class="m-5">
+        <a routerLink="track"><button class="btn btn-warning">Modifier/Supprimer un tableau</button></a>
+    </div>
+</div>
+<div class="board">
+    <div class="card-list mat-elevation-z1" *ngFor="let track of tracks; let i=index">
+
+        <h2 cdkDragHandle class="mat-h2">{{track.title}}</h2>
+
+        <div class="card-list-content" cdkDropList [id]="track.id" [cdkDropListData]="track.card"
+            [cdkDropListConnectedTo]="track.id" (cdkDropListDropped)="onTaskDrop($event)"
+            [ngStyle]="{'background-color': trackColor[i]}">
+
+            <mat-card style="margin: 2%;" *ngFor="let card of track.card" cdkDrag>
+                <!-- Use the mat-card-content to add the proper spacing. -->
+                <mat-card-content>
+                    <h2>{{card.title}}</h2>
+                    {{card.description}}
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

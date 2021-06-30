@@ -1,7 +1,8 @@
-import { Card } from "./card";
+import { Track } from "./track";
+
 
 export interface Heading {
     id: number;
     title: string;
-    card: Card;
+    track: Track;
 }

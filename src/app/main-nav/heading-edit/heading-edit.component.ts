@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { Heading } from 'src/app/model/heading';
@@ -17,13 +17,22 @@ export class HeadingEditComponent implements OnInit {
   titleValidator : boolean = true;
   titleLengthValidator: boolean = true;
 
-  constructor(private headingService: HeadingService, private toastr: ToastrService, private modale: NgbActiveModal, private router: Router) { }
+  constructor(private headingService: HeadingService, private toastr: ToastrService, private modale: NgbActiveModal, private router: Router, private activateRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getHeadingById();
   }
 
   close() {
     this.modale.dismiss();
+  }
+
+  getHeadingById() {
+    this.activateRoute.params.subscribe(res => {
+      this.headingService.getById(res.id).subscribe(params =>{
+        this.heading = params;
+      })
+    });
   }
 
   editHeading(form : NgForm) {

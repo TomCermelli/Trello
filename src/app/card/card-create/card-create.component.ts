@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-card-create',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardCreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modale: NgbActiveModal) { }
 
   ngOnInit(): void {
+  }
+
+  close() {
+    this.modale.dismiss();
+  }
+
+  createCard(form : NgForm){
+
   }
 
 }
