@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Heading } from 'src/app/model/heading';
+import { HeadingService } from 'src/app/services/heading.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  headings: any = {} as Heading;
+
+  constructor(private headingService : HeadingService, private router: Router) { }
 
   ngOnInit(): void {
+    this.populateNav();
+  }
+
+  populateNav(){
+    this.headingService.getAll().subscribe((res : any) => {
+      this.headings = res.body;
+    })
   }
 
 }

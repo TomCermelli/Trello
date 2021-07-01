@@ -32,6 +32,7 @@ export class MainNavComponent implements OnInit {
   ngOnInit(): void {
     this.populateHeading();
   }
+  
 
   // Cette méthode permet d'ouvrir un modal ou se trouve le formulaire pour crée une rubrique
   openModal(): void {
@@ -44,14 +45,15 @@ export class MainNavComponent implements OnInit {
   }
 
   // Cette méthode permet de récupérer toute nos rubriques 
-  populateHeading(): Heading[] {
+  populateHeading() {
     // On récupère toute nos rubriques grâce au service crée au préalable avec le méthode getAll()
     // Celui-ci nous retourne un observable c'est pour quoi on chaine avec le .subscribe
     this.headingService.getAll().subscribe((res : any) => {
+      console.log(res.body);
+      
       // Grâce à toute les données récupérées on peut maintenant remplir notre tableau vide initialisé plus haut
       this.headings = res.body;
     })
-    return this.headings
   }
 
 }

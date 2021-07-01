@@ -42,6 +42,7 @@ export class HeadingListComponent implements OnInit {
       // Grâce à toute les données récupérées on peut maintenant remplir le tableau de Heading crée plus haut
       this.headings = res.body;
     })
+
     return this.headings
   }
 

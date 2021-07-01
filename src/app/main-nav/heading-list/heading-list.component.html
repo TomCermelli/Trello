@@ -1,13 +1,22 @@
 <div class="container">
-    <div class="border rounded p-3 mb-3 mt-3" *ngFor="let heading of headings">
+    <h2 align="center">Chirripo - Pôles</h2>
+    <hr width=350 style="margin-inline: auto;">
+    <div class="border rounded p-3 mb-5 mt-5" *ngFor="let heading of headings">
         <section class="row">
             <section class="align-self-center col-md-9">
                 <h3 class="headingTitle ">{{heading.title}}</h3>
             </section>
-            <section class="col-md-3 text-right">
-                <a class="btn btn-success mr-4 visualLink" (click)="openEditModal(heading)"><i
-                            class="fa fa-pencil fa-2x"></i></a>
-                <a class="btn btn-danger" (click)="deleteHeading(heading)"><i class="fa fa-trash fa-2x"></i></a>
+            <section class="d-flex justify-content-around col-md-3 text-right">
+                <div>
+                    <a class="btn btn-success mr-4 visualLink" (click)="openEditModal(heading)">
+                        <img src="assets/stylo-plongeur.png" alt="stylo">
+                    </a>
+                </div>
+                <div>
+                    <a class="btn btn-danger" (click)="deleteHeading(heading)">
+                        <img src="assets/poubelle-de-recyclage.png" alt="poubelle">
+                    </a>
+                </div>
             </section>
         </section>
     </div>

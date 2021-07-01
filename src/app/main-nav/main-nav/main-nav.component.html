@@ -5,7 +5,7 @@
         <button class="btn btn-success" (click)="openModal()">Créer un nouveau pôle</button>
     </div>
     <div class="m-5">
-        <a routerLink="heading"><button class="btn btn-warning">Modifier/Supprimer un pôle</button></a>
+        <a routerLink="/heading"><button class="btn btn-warning">Modifier/Supprimer un pôle</button></a>
     </div>
 </div>
 <ul class="nav justify-content-evenly">
@@ -17,7 +17,7 @@
         photo: heading.title == photoVideo,
         production: heading.title == production,
         creation: heading.title == creationGraphique,
-        digital: heading.title == digital }" routerLink="home/{{heading.title}}">{{heading.title}}</a>
+        digital: heading.title == digital }" routerLink="/home/{{heading.title}}">{{heading.title}}</a>
     </li>
 
 </ul>

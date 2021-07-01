@@ -9,23 +9,8 @@
         <li class="nav-item">
             <a class="nav-link active linkColor" routerLink="/home">Accueil</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link linkColor" routerLink="/**">Stratégie Edition</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link linkColor" routerLink="/**">Marketing Opérationnel</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link linkColor" routerLink="/**">Photo & Vidéo</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link linkColor"routerLink="/**">Production</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link linkColor" routerLink="/**">Création Graphique ( PAO )</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link linkColor" routerLink="/**">Digital</a>
+        <li class="nav-item" *ngFor="let nav of headings">
+            <a class="nav-link linkColor" routerLink="/home/{{nav.title}}">{{nav.title}}</a>
         </li>
         <li class="nav-item">
             <a class="nav-link linkColor" routerLink="/connexion">Compte</a>

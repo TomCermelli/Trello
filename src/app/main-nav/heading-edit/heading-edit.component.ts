@@ -22,21 +22,11 @@ export class HeadingEditComponent implements OnInit {
   constructor(private headingService: HeadingService, private toastr: ToastrService, private modale: NgbActiveModal, private router: Router, private activateRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getHeadingById();
-    console.log(this.heading);
-    
+
   }
 
   close() {
     this.modale.dismiss();
-  }
-
-  getHeadingById() {
-    this.activateRoute.params.subscribe(res => {
-      this.headingService.getById(res.id).subscribe(params =>{
-        this.heading = params;
-      })
-    });
   }
 
   editHeading() {
