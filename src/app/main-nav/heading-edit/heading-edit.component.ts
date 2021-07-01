@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
@@ -13,7 +13,9 @@ import { HeadingService } from 'src/app/services/heading.service';
 })
 export class HeadingEditComponent implements OnInit {
 
-  heading : any = {} as Heading;
+  @Input() heading : any = {} as Heading
+
+
   titleValidator : boolean = true;
   titleLengthValidator: boolean = true;
 
@@ -21,6 +23,8 @@ export class HeadingEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHeadingById();
+    console.log(this.heading);
+    
   }
 
   close() {
@@ -35,15 +39,14 @@ export class HeadingEditComponent implements OnInit {
     });
   }
 
-  editHeading(form : NgForm) {
+  editHeading() {
     this.titleValidator = !this.heading.title ? this.titleValidator = false : this.titleValidator = true;
-    this.titleLengthValidator = this.heading.title && this.heading.title.length < 5 ? this.titleLengthValidator = false : this.titleLengthValidator = true;
+    this.titleLengthValidator = this.heading.title && this.heading.title.length < 3 ? this.titleLengthValidator = false : this.titleLengthValidator = true;
     if(this.titleValidator && this.titleLengthValidator){
       this.headingService.update(this.heading).subscribe( res => {
 
       });
-      this.toastr.success("Votre rubrique a été modifié, vous allez ensuite être redirigé vers le forum", "Modification validé");
-      setTimeout(() => {this.router.navigate(['forum']); }, 3000)
+      this.toastr.success("Votre rubrique a été modifié", "Modification validé");
     }
     else {
       this.toastr.error("Vous n'avez pas correctement remplit le champs, réessayer s'il vous plait", "Erreur")

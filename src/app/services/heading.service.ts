@@ -8,6 +8,7 @@ import { Heading } from '../model/heading';
 export class HeadingService {
  
   baseUrl: string;
+  headings: any = {} as Heading;
 
   constructor(private http: HttpClient) { 
     // L'url où on va récupérer nos données
@@ -37,6 +38,17 @@ export class HeadingService {
   // Supprime une rubrique , pour se faire il faut envoyé à cette méthode un objet de type Heading
   delete(heading : Heading){
     return this.http.delete(this.baseUrl + heading.id);
+  }
+
+  // Cette méthode permet de récupérer toute nos rubriques 
+  populateHeading(): Heading[] {
+    // On récupère toute nos rubriques grâce au service crée au préalable avec le méthode getAll()
+    // Celui-ci nous retourne un observable c'est pour quoi on chaine avec le .subscribe
+    this.getAll().subscribe((res : any) => {
+      // Grâce à toute les données récupérées on peut maintenant remplir le tableau de Heading crée plus haut
+      this.headings = res.body;
+    })
+    return this.headings
   }
 
 }

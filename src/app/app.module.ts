@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { CardModule } from './card/card.module';
 import { LayoutModule } from './layout/layout.module';
 import { MainNavModule } from './main-nav/main-nav.module';
+import { TrackModule } from './track/track.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MainNavModule } from './main-nav/main-nav.module';
     CardModule,
     LayoutModule,
     MainNavModule,
+    TrackModule,
     BrowserModule,
     RouterModule,
     AppRoutingModule,

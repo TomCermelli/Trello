@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h5 class="modal-title">Création d'un tableau</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="d-flex justify-content-center" style="margin-top: 5%;">
+        <form (ngSubmit)="createTrack(form)" #form="ngForm">
+            <div class="form-group">
+                <label for="trackName">Nom</label>
+                <input #trackInput="ngModel"  type="text" class="form-control" ngModel name="title"
+                [ngClass]="{'is-invalid' : form.submitted && (trackInput.errors?.required || trackInput.errors?.minlength)}" 
+                minlength=3 required id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Confirmé</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Annulé</button>
+            </div>
+        </form>
+    </div>
+</div>

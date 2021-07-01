@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Heading } from 'src/app/model/heading';
 import { HeadingService } from 'src/app/services/heading.service';
+import { HeadingDeleteComponent } from '../heading-delete/heading-delete.component';
+import { HeadingEditComponent } from '../heading-edit/heading-edit.component';
 
 @Component({
   selector: 'app-heading-list',
@@ -11,12 +14,25 @@ export class HeadingListComponent implements OnInit {
 
   headings: Heading[] = [];
 
-  constructor(private headingService: HeadingService) { }
+  constructor(private headingService: HeadingService, protected modalService: NgbModal) { }
 
   // Au lancement on remplit notre tableau de Heading
   ngOnInit(): void {
     this.populateHeading();
   }
+
+  openEditModal(heading: Heading) {
+    let modalRef = this.modalService.open(HeadingEditComponent);
+    modalRef.componentInstance.heading = heading;
+    modalRef.result.then((confirm) => {
+      this.populateHeading();
+    }, (close) => {
+      this.populateHeading()
+
+    });
+    this.populateHeading()
+  }
+  
 
   // Cette méthode permet de récupérer toute nos rubriques 
   populateHeading(): Heading[] {
@@ -29,7 +45,13 @@ export class HeadingListComponent implements OnInit {
     return this.headings
   }
 
-  deleteHeading(heading: Heading){
-    
+  deleteHeading(heading: Heading) {
+    let modalRef = this.modalService.open(HeadingDeleteComponent);
+    modalRef.componentInstance.heading = heading;
+    modalRef.result.then((confirm) => {
+      this.populateHeading();
+    }, (close) => {
+
+    });
   }
 }

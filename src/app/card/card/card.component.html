@@ -4,7 +4,7 @@
     <!--Si on ajoute un pôle, il ne faut pas oublié de rajouté un css correspondant et ajouter une variable dans le main-nav.ts contenant le contenu que l'on a enregistré.
         Si nous ne faisont pas cette manipulation le bouton aura par défault un background noir-->
     <div class="m-5">
-        <button class="btn btn-success" (click)="openModalCard()">Nouveau tableau</button>
+        <button class="btn btn-success" (click)="openModalTrack()">Nouveau tableau</button>
     </div>
     <div class="m-5">
         <a routerLink="track"><button class="btn btn-warning">Modifier/Supprimer un tableau</button></a>
@@ -22,8 +22,8 @@
             <mat-card style="margin: 2%;" *ngFor="let card of track.card" cdkDrag>
                 <!-- Use the mat-card-content to add the proper spacing. -->
                 <mat-card-content>
-                    <h2>{{card.title}}</h2>
-                    {{card.description}}
+                    <h2>titre</h2>
+                    <p>Message ici vbfdbdsfbsdfbfdsb</p>
                 </mat-card-content>
             </mat-card>
         </div>

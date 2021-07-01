@@ -25,6 +25,7 @@ export class HeadingCreateComponent implements OnInit {
     if (form.valid) {
       this.headingService.create(form.value).subscribe(res => {
       });
+      this.headingService.populateHeading();
       this.toastr.success("Votre nouvelle ajout a été prise en compte", "Création valide");
     }
     else {

@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeadingListComponent } from './heading-list/heading-list.component';
 import { RouterModule } from '@angular/router';
 import { HeadingEditComponent } from './heading-edit/heading-edit.component';
+import { HeadingDeleteComponent } from './heading-delete/heading-delete.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HeadingEditComponent } from './heading-edit/heading-edit.component';
     HeadingCreateComponent,
     HeadingListComponent,
     HeadingEditComponent,
+    HeadingDeleteComponent,
   ],
   imports: [
     CommonModule,
