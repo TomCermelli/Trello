@@ -25,14 +25,12 @@ export class MainNavComponent implements OnInit {
   creationGraphique: string = "Création Graphique (PAO)";
   digital: string = "Digital";
 
-
   constructor(private headingService: HeadingService, protected modalService : NgbModal,private toastr: ToastrService,private router: Router) { }
 
   // Au lancement on remplit notre tableau de Heading
   ngOnInit(): void {
     this.populateHeading();
   }
-  
 
   // Cette méthode permet d'ouvrir un modal ou se trouve le formulaire pour crée une rubrique
   openModal(): void {

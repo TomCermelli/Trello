@@ -3,7 +3,7 @@
     <div>
         <form class="spacingContainer">
             <section class="form-group">
-                <label for="formGroupExampleInput">Nom de la rubrique {{heading.title}}</label>
+                <label class="mt-5 mb-4" for="formGroupExampleInput">Nom de la rubrique</label>
                 <input [(ngModel)]="heading.title" name="title" type="text"
                     [ngClass]="{'is-invalid' : !titleValidator || !titleLengthValidator}" class="form-control"
                     placeholder="{{heading.title}}" minlength="5" required>
@@ -16,7 +16,7 @@
                     La rubrique doit contenir au moin 5 caractères
                 </small>
             </section>
-            <div class="text-right mt-5">
+            <div class="text-right mt-4 mb-2">
                 <button class="btn btn-primary" type=submit (click)="editHeading()">Valider</button>
             </div>
         </form>
